@@ -1,0 +1,17 @@
+.products {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.product {
+    /* background-color: rgb(135, 244, 250);
+    border: 1px dashed rgb(133, 128, 128); */
+    padding: 0.7rem;
+    margin: .5rem;
+    font-weight: bold;
+}
+
+.product--header {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
