@@ -11,8 +11,9 @@ fieldset {
 
 .form--login {
     display: inline-block;
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: left;
+    padding-left: 10px;
 }
 
 .form--login > fieldset > input[type="email"] {
@@ -44,6 +45,7 @@ fieldset {
 .container--login {
     text-align: center;
     background-image: url("https://cdn.shopify.com/s/files/1/1577/8257/t/9/assets/slide_4.jpg?v=156118927317865513961481210552");
+    margin-top: 30px;
 }
 
 .form--login {

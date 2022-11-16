@@ -25,8 +25,11 @@ export const Register = (props) => {
                         id: createdUser.id,
                         staff: createdUser.isStaff
                     }))
-
-                    navigate("/")
+                    {
+                        createdUser.isStaff
+                        ? navigate("/employees/form")
+                        : navigate("/")
+            }
                 }
             })
     }

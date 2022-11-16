@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./products.css"
 
 export const ProductForm = () => {
     /*
@@ -50,7 +51,7 @@ export const ProductForm = () => {
 
     return (
         <form className="productForm">
-            <h2 className="ticketForm__title">New Product Form</h2>
+            <h2 className="productForm__title">New Product Form</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Name:</label>
