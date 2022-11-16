@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./products.css"
 
-export const ProductList = () => {
+export const ProductList = ( {searchTermState} ) => {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFiltered] = useState([])
     const [expensive, setExpensive] = useState(false)
@@ -11,6 +11,16 @@ export const ProductList = () => {
 
     const localKandyUser = localStorage.getItem("kandy_user")
     const kandyUserObject = JSON.parse(localKandyUser)
+
+    useEffect (
+        () => {
+            const searchedProducts = products.filter(product => {
+                return product.name.toLowerCase().startsWith(searchTermState.toLowerCase())
+            })
+            setFiltered(searchedProducts)
+        },
+        [ searchTermState ]
+    )
 
     useEffect(
         () => {
@@ -43,52 +53,20 @@ export const ProductList = () => {
         [expensive])
 
 
-
-    // useEffect(
-    //     () => {
-    //         if (kandyUserObject.staff) {
-    //             // for employees
-    //             setFiltered(products)
-    //         }
-    //         else {
-    //             ""
-    //             // for customers
-    //             // const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
-    //             // setFiltered(myTickets)
-    //         }
-    //     },
-    //     [products]
-    // )
-
-    // useEffect(
-    //     () => {
-    //         if (openOnly) {
-    //            const openTicketArray = tickets.filter(ticket => {
-    //             return ticket.userId === honeyUserObject.id && ticket.dateCompleted === ""
-    //            })
-    //            setFiltered(openTicketArray)
-    //         }
-    //         else {
-    //             const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
-    //             setFiltered(myTickets)
-    //         }
-    //     },
-    //     [openOnly]
-    // )
-
     return <>
+    <section className="products_main">
     {
         kandyUserObject.staff
             ? <>
-             <button onClick={ () => { setExpensive(true) } }>Top Priced</button>
-             <button onClick={ () => { setExpensive(false) } }>Show All</button>
-             <button onClick={() => navigate("/product/create")}>Create Product</button>
+             <button className="button" onClick={ () => { setExpensive(true) } }>Top Priced</button>
+             <button className="button" onClick={ () => { setExpensive(false) } }>Show All</button>
+             <button className="button" onClick={() => navigate("/product/create")}>Create Product</button>
              </>
             : <>
             </>
     }
     
-    <h2>List of Products</h2>
+    <h2 className="product--title">List of Products</h2>
 
     <article className="products">
         {
@@ -104,5 +82,6 @@ export const ProductList = () => {
             )
         }
     </article>
+    </section>
     </>
 }

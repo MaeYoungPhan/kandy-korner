@@ -1,15 +1,19 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    flex: 1;
+    flex-direction: column;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    /* flex-basis: 20%; */
     list-style-type: none;
 }
 
-.navbar__logout {
+/* .navbar__logout {
     margin-left: auto;
+} */
+
+.kandyLogo {
+    width: 300px;
 }
 
