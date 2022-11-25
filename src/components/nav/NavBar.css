@@ -2,11 +2,23 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    list-style-type: none;
 }
 
 .navbar__item {
-    /* flex-basis: 20%; */
-    list-style-type: none;
+    flex-basis: 20%;
+}
+
+.navbar__link {
+    font-family: "Life Savers", sans-serif;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    color: hotpink;
+    font-size: 3rem;
 }
 
 /* .navbar__logout {
@@ -15,5 +27,9 @@
 
 .kandyLogo {
     width: 300px;
+}
+
+.cartIcon {
+    width: 25px;
 }
 

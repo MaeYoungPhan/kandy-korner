@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Product } from "./product"
 import "./products.css"
 
 export const ProductList = ( {searchTermState} ) => {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFiltered] = useState([])
     const [expensive, setExpensive] = useState(false)
-    // const [openOnly, updateOpenOnly] = useState(false)
     const navigate = useNavigate()
 
     const localKandyUser = localStorage.getItem("kandy_user")
@@ -71,14 +71,8 @@ export const ProductList = ( {searchTermState} ) => {
     <article className="products">
         {
             filteredProducts.map(
-                (product) => {
-                    return <section className = "product" key={`product--${product.id}`}>
-                        <header className="product--header">{product.name}</header>
-                        <img src={product.img} width="100"></img>
-                        <p> Category: {product.productType.category}</p>
-                        <p> Price: ${product.price} ea.</p>
-                    </section>
-                }
+                (product) => <Product productObject={product}
+                currentUser={kandyUserObject} />
             )
         }
     </article>

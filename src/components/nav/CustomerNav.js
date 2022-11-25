@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 import logo from "./images/kandylogo.jpg"
+import cartIcon from "./images/cartIcon.png"
 
 export const CustomerNav = () => {
     const navigate = useNavigate()
@@ -13,6 +14,9 @@ export const CustomerNav = () => {
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/products">Find Candy</Link>
+            </li>
+            <li className="navbar__item active"><img className="cartIcon" src={cartIcon}/>
+                <Link className="navbar__link" to="/orders">Cart</Link>
             </li>
             {
             localStorage.getItem("kandy_user")

@@ -1,26 +1,39 @@
 .employees {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     margin-top: 10px;
+    margin-left: 25px;
+    font-family: "Life Savers", sans-serif;
+    line-height: 1.5rem;
 }
 
 .employee {
     background-color: rgb(3, 169, 251);
     border: solid 2px rgb(250, 1, 230);
     color: black;
-    padding: 7px;
-    margin: 10px;
+    padding: .5rem 1rem;
+    margin-left: 330px;
+    margin-bottom: 10px;
+    font-family: "Life Savers", sans-serif;
 }
 
 .employee_footer {
-    margin: 1rem 0 .25rem 0;
     font-style: oblique;
+    margin-top: 5px;
 }
 
 .employee_header {
     font-size: larger;
     font-weight: 700;
-    line-height: 3rem;
+    line-height: 2rem;
+}
+
+.fire_employee {
+    margin-top: 5px;
+    padding: .2rem;
+    background-color: rgb(206, 5, 5);
+    color: rgb(246, 250, 250);
+    font-weight:700;
+    margin-left: 5px;
 }
