@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 export const EmployeeDetails = () => {
@@ -16,6 +16,18 @@ export const EmployeeDetails = () => {
         },
         [employeeId]
     )
+    let navigate = useNavigate()
+
+    const deleteButton = () => {
+            return <button onClick={() => {
+            fetch(`http://localhost:8088/employees/${employee.id}`, {
+            method: "DELETE",
+        })
+            .then(() => {
+                navigate("/employees")
+            }) 
+        }} className="fire_employee">Fire Employee</button>
+    }
 
     return <section className="employee" >
     <header className="employee_header">{employee?.user?.fullName}</header>
